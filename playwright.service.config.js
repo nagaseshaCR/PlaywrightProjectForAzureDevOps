@@ -13,6 +13,15 @@ export default defineConfig(
     credential: new DefaultAzureCredential(),
   }),
   {
+    use: {
+    /* Base URL to use in actions like `await page.goto('')`. */
+    // baseURL: 'http://localhost:3000',
+
+    /* Collect trace, screenshots, and video for every test. */
+    trace: 'on',
+    screenshot: 'on',
+    video: 'on',
+  },
     /*
     Enable Playwright Workspaces Reporter:
     Uncomment the reporter section below to upload test results and reports to Playwright Workspaces.
