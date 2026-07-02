@@ -1,7 +1,7 @@
 const { defineConfig } = require('@playwright/test');
 const { createAzurePlaywrightConfig, ServiceOS } = require('@azure/playwright');
 const { DefaultAzureCredential } = require('@azure/identity');
-const config = require('./playwright.config');
+const config = require('./playwright.config').default;
 
 /* Learn more about service configuration at https://aka.ms/pww/docs/config */
 export default defineConfig(
@@ -13,15 +13,15 @@ export default defineConfig(
     credential: new DefaultAzureCredential(),
   }),
   {
-    use: {
-    /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
+  //   use: {
+  //   /* Base URL to use in actions like `await page.goto('')`. */
+  //   // baseURL: 'http://localhost:3000',
 
-    /* Collect trace, screenshots, and video for every test. */
-    trace: 'on',
-    screenshot: 'on',
-    video: 'on',
-  },
+  //   /* Collect trace, screenshots, and video for every test. */
+  //   trace: 'on',
+  //   screenshot: 'on',
+  //   video: 'on',
+  // },
     /*
     Enable Playwright Workspaces Reporter:
     Uncomment the reporter section below to upload test results and reports to Playwright Workspaces.
